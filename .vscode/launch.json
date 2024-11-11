@@ -4,12 +4,20 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+        {
+            "name": "Launch Edge",
+            "request": "launch",
+            "type": "msedge",
+            "url": "http://localhost:3000/figma-imports",
+            "webRoot": "${workspaceFolder}"
+        },
+
         
+
         {
             "type": "node",
             "request": "launch",
-            "name": "Launch Program",
-            "url": "http://localhost:3000/figma-imports",
+            "name": "Launch Edge against localhost",
             "skipFiles": [
                 "<node_internals>/**"
             ],
