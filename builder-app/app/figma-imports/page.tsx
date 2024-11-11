@@ -1,5 +1,10 @@
 import { builder } from "@builder.io/sdk";
 import { RenderBuilderContent } from "../../components/builder";
+import type { AppProps } from "next/app";
+import { useParams } from 'next/navigation';
+import dynamic from 'next/dynamic'
+ 
+
 
 // Builder Public API Key set in .env file
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
@@ -7,10 +12,11 @@ builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
 interface PageProps {
   params: {
     page: string[];
+    
   };
 }
 
-export default async function Page(props: PageProps) {
+export default async function App(props: PageProps) {
   const builderModelName = "figma-imports";
 
   const content = await builder
